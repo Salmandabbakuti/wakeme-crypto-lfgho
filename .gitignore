@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#Hardhat files
+cache
+artifacts/
+coverage/
+coverage.json
+typechain/
+typechain-types/

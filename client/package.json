@@ -1,0 +1,24 @@
+{
+  "name": "lfgho-hack",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "antd": "^5.13.0",
+    "connectkit": "^1.6.0",
+    "next": "14.0.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "viem": "^1.21.4",
+    "wagmi": "^1.4.13"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4"
+  }
+}
