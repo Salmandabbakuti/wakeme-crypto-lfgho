@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { mainnet, polygon, base, polygonMumbai, goerli } from "wagmi/chains";
+import { polygonMumbai, goerli } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [mainnet, polygon, base, goerli, polygonMumbai],
+  [polygonMumbai, goerli],
   [publicProvider()]
 );
 
@@ -41,7 +41,7 @@ export default function Web3Provider({ children }) {
         options={{
           language: "en-US",
           disclaimer: "This is a demo app. Use at your own risk.",
-          initialChainId: 1,
+          initialChainId: 80001,
           enforceSupportedChains: true
         }}
       >

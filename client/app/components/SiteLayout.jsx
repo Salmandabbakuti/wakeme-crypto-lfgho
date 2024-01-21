@@ -20,7 +20,7 @@ export default function SiteLayout({ children }) {
           alignItems: "center"
         }}
       >
-        <h3>Connectkit Demo</h3>
+        <h3>WakeMe Crypto</h3>
         <div
           style={{
             display: "flex",
