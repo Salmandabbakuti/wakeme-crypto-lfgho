@@ -1,48 +1,33 @@
-# minimal-hardhat-boilerplate
+### WakeMe Crypto
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts with balances.
+WakeMeCrypto is a decentralized application (DApp) built on the Ethereum blockchain, creating a unique and rewarding wake-up experience. Users can set alarms by staking Ethereum, with successful wake-ups resulting in the retrieval of the staked amount. Failure to wake up within the specified time leads to the loss of the staked Ethereum.
 
-> Recommended to use Node.js v18+ and npm v8+
+## Getting Started
 
-Try running some of the following tasks:
-
-```shell
+```bash
 npm install
 
-# Set/Read/Remove hardhat config variables
-# npx hardhat vars set API_KEY
-# npx hardhat vars get API_KEY
-# npx hardhat vars DELETE API_KEY
-# npx hardhat vars list
-
-# set PRIVATE_KEY
-npx hardhat vars set PRIVATE_KEY
-
-
-# starts local node
-npx hardhat node
-
-# compile contracts
 npx hardhat compile
 
-# deploy contract defined in tasks on specified network
-npx hardhat deploy --network localhost
-
-# deploy contract in scripts/deploy.ts on specified network
-npx hardhat run scripts/deploy.ts --network localhost
-
-# verify contract
-npx hardhat verify --network <deployed network> <deployed contract address> "<constructor1>" "<constructor2>"
-
-# check coverage using solidity-coverage plugin: supports hardhat network only
-npx hardhat coverage --network hardhat
-
-# unit tests including gas usage
-npx hardhat test
-
-# remove all compiled and deployed artifacts
-npx hardhat clean
-
-# show help
-npx hardhat help
+npx hardhat run scripts/deploy.js --network mumbai
 ```
+
+## Usage
+
+1. Connect your Ethereum wallet using ConnectKit.
+
+2. Set alarms by staking Ethereum.
+3. Successfully waking up (Stop Alarm) reclaims your staked amount.
+4. Failure to wake up within the specified time results in the loss of the staked Ethereum.
+
+### Screenshots
+
+![sc1](https://github.com/Salmandabbakuti/lfgho-hack/assets/29351207/0740750f-e574-457d-8755-aa81a3a03c13)
+
+![sc2](https://github.com/Salmandabbakuti/lfgho-hack/assets/29351207/987025f8-f8be-4e05-9853-6818c7c4178f)
+
+![sc3](https://github.com/Salmandabbakuti/lfgho-hack/assets/29351207/094237c7-2b86-45aa-8870-cdaaac646260)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
