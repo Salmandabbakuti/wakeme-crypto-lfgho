@@ -160,10 +160,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (account) {
+    if (account && provider) {
       getAlarms();
     }
-  }, [account]);
+  }, [account, provider]);
 
   useEffect(() => {
     // Request notification permission when the component mounts
