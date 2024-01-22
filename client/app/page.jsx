@@ -232,7 +232,7 @@ function App() {
       title: "Stake",
       dataIndex: "stake",
       key: "stake",
-      render: (stake) => `${formatEther(stake)} ETH`
+      render: (stake) => `${formatEther(stake)} MATIC`
     },
     {
       title: "Actions",
@@ -280,7 +280,7 @@ function App() {
                 min={0}
                 max={100}
                 placeholder="Amount to stake"
-                addonAfter="ETH"
+                addonAfter="MATIC"
                 onChange={(val) => setAmountToStake(val)}
               />
               <Button
