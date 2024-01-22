@@ -12,6 +12,20 @@ npx hardhat compile
 npx hardhat run scripts/deploy.js --network mumbai
 ```
 
+### Client App
+
+> Note: Update the contract address in `client/app/page.jsx` with the deployed contract address.
+
+```bash
+cd client
+
+npm install
+
+npm run dev
+```
+
+Open http://localhost:3000 with your browser to see the result.
+
 ## Usage
 
 1. Connect your Ethereum wallet using ConnectKit.
