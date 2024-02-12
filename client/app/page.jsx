@@ -133,23 +133,13 @@ function App() {
 
   useEffect(() => {
     // Function to update time and date
-    const updateTimeAndDate = () => {
-      const now = new Date();
-      const timeString = now.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true
-      });
-      const dateString = now.toLocaleDateString([], {
-        weekday: "short",
-        year: "numeric",
-        month: "short",
-        day: "2-digit"
-      });
 
-      setCurrentTime(timeString);
-      setCurrentDate(dateString);
+    const updateTimeAndDate = () => {
+      const currentTime = dayjs().format("h:mm:ss A");
+      const currentDate = dayjs().format("dddd, MMMM D, YYYY");
+
+      setCurrentTime(currentTime);
+      setCurrentDate(currentDate);
     };
 
     // Update time and date every second
@@ -221,7 +211,7 @@ function App() {
         const date = dayjs.unix(deadline);
         return (
           <span>
-            {date.format("HH:mm:ss YYYY-MM-DD")}
+            {date.format(" h:mm A MMM D, YYYY")}
             <br />
             {date.fromNow()}
           </span>
@@ -250,19 +240,32 @@ function App() {
   ];
 
   return (
-    <div className="app-container">
+    <div
+      style={{
+        textAlign: "center",
+        marginTop: "10px"
+      }}
+    >
       <div className="card">
         <h1>{currentTime}</h1>
         <h2>{currentDate}</h2>
       </div>
-      {account && (
+      {account ? (
         <div>
-          <div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              marginTop: "20px",
+              marginBottom: "20px"
+            }}
+          >
             <Title level={4}>Set Alarm</Title>
             <Space direction="horizontal">
               <DatePicker
                 placeholder="Select date and time"
-                format="HH:mm:ss YYYY-MM-DD"
+                format="h:mm A MMM D, YYYY"
                 showTime={{
                   hideDisabledOptions: true,
                   defaultValue: dayjs("00:00:00", "HH:mm:ss")
@@ -290,6 +293,11 @@ function App() {
               >
                 Set Alarm
               </Button>
+            </Space>
+          </div>
+          <div>
+            <Space direction="horizontal">
+              <Title level={4}>Current Alarms</Title>
               <Button
                 shape="circle"
                 type="primary"
@@ -298,9 +306,6 @@ function App() {
                 onClick={getAlarms}
               />
             </Space>
-          </div>
-          <div>
-            <Title level={4}>Current Alarms</Title>
             <Table
               dataSource={alarms}
               columns={columns}
@@ -308,6 +313,17 @@ function App() {
               rowKey={(record) => record.deadline}
             />
           </div>
+        </div>
+      ) : (
+        <div>
+          <h2
+            style={{
+              textAlign: "center",
+              marginTop: "40px"
+            }}
+          >
+            Please connect your wallet to get started!
+          </h2>
         </div>
       )}
     </div>
